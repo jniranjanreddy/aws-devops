@@ -1,0 +1,47 @@
+{
+    "executionRoleArn":"arn:aws:iam::049615857345:role/ecsTaskExecutionRole",
+    "containerDefinitions":[
+       {
+          "logConfiguration":{
+             "logDriver":"awslogs",
+	     "options":{
+               "awslogs-group":"/ecs/sgauth-api",
+               "awslogs-region":"eu-west-1",
+               "awslogs-stream-prefix":"ecs"
+            }
+               
+          },
+          "portMappings":[
+             {
+                "hostPort":8000,
+                "protocol":"tcp",
+                "containerPort":8000
+             }
+          ],
+          "cpu":0,
+          "environment":[
+             {
+                "name":"message",
+                "value":"Hello"
+             }
+             
+          ],
+          "image":"gkoenig/simplehttp:latest",
+          "name":"simple-http-container"
+       }
+    ],
+    "placementConstraints":[
+       
+    ],
+    "memory":"512",
+    "taskRoleArn":"arn:aws:iam::049615857345:role/ecsTaskExecutionRole",
+    "family":"td-simplehttp",
+    "requiresCompatibilities":[
+       "FARGATE"
+    ],
+    "networkMode":"awsvpc",
+    "cpu":"256",
+    "volumes":[
+       
+    ]
+ }

@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # Upgrade AWS CLI to the latest version
+      - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - echo Test started on `date`
+  build:
+    commands:
+      - echo Build started on `date`
+      - aws ecs register-task-definition --cli-input-json file://final-ecs-Task.json
+      - aws ecs update-service --cluster dev-fargate --service simplehttp --task-definition td-simplehttp
+  post_build:
+    commands:
+      - echo Deployed to ECS
