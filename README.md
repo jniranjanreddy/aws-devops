@@ -15,3 +15,8 @@ Phases
   post_build
 
 ```
+
+```
+CodeBuild default Variables.
+
+```
