@@ -8,11 +8,13 @@ phases:
       nodejs: 14.x
     commands:
       - echo install process started
-      - npm install
+      - echo ${DB_USER}
+      - echo ${DB_PASSWD}
+      #- npm install
   build:
     commands:
       - echo build process started now
-      - echo ${codepipeline.PipelineExecutionId}
+ #     - {codepipeline.PipelineExecutionId}
  #     - npm run build  
 #artifacts:
   # include all files required to run application
