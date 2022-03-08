@@ -12,6 +12,7 @@ phases:
   build:
     commands:
       - echo build process started now
+      - echo ${codepipeline.PipelineExecutionId}
  #     - npm run build  
 #artifacts:
   # include all files required to run application
