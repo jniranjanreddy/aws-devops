@@ -12,10 +12,10 @@ phases:
   build:
     commands:
       - echo build process started now
-      - npm run build  
-artifacts:
+ #     - npm run build  
+#artifacts:
   # include all files required to run application
   # we include only the static build files
-  files:
-    - '**/*'
-  base-directory: 'build'
+  #files:
+  #  - '**/*'
+  #base-directory: 'build'
