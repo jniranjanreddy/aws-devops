@@ -9,13 +9,13 @@ phases:
     commands:
       - echo install process started
       - echo ${DB_USER}
-      - echo ${DB_PASSWD}
-      - npm install
+      - echo ${DB_PASSWORD}
+      #- npm install
   build:
     commands:
       - echo build process started now
  #     - {codepipeline.PipelineExecutionId}
-      - npm run build  
+ #     - npm run build  
 #artifacts:
   # include all files required to run application
   # we include only the static build files
