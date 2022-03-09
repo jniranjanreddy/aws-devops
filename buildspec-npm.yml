@@ -9,7 +9,7 @@ phases:
     commands:
       - echo install process started
       - echo ${DB_USER}
-      - echo ${DB_PASSWORD}
+      - echo ${DB_PASS}
       #- npm install
   build:
     commands:
