@@ -1,0 +1,21 @@
+```
+[root@minikube01 ~]# aws --region us-west-2 ssm get-parameters-by-path --path /dev --recursive --with-decryption --output text
+PARAMETERS  arn:aws:ssm:us-west-2:101805901231:parameter/dev/DB_USER  text    2022-03-09T08:35:25.369000-05:00 /dev/DB_USER    SecureString    db_user_niranjan   2
+
+
+[root@minikube01 ~]# aws --region us-west-2 ssm get-parameters-by-path --path /dev --recursive --with-decryption --output json
+{
+    "Parameters": [
+        {
+            "Name": "/dev/DB_USER",
+            "Type": "SecureString",
+            "Value": "db_user_niranjan",
+            "Version": 2,
+            "LastModifiedDate": "2022-03-09T08:35:25.369000-05:00",
+            "ARN": "arn:aws:ssm:us-west-2:101805901231:parameter/dev/DB_USER",
+            "DataType": "text"
+        }
+    ]
+}
+
+```
