@@ -23,5 +23,7 @@ Phases
 
 ```
 CodeBuild default Variables.
+AWS_DEFAULT_REGION
+
 
 ```
