@@ -8,8 +8,9 @@ phases:
       nodejs: 14.x
     commands:
       - echo install process started
-      - echo ${DB_USER}
-      - echo ${DB_PASS}
+      - CODEBUILD_BUILD_ID
+     # - echo ${DB_USER}
+      #- echo ${DB_PASS}
       #- npm install
   build:
     commands:
