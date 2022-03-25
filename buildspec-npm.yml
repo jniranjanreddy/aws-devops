@@ -8,14 +8,41 @@ phases:
       nodejs: 14.x
     commands:
       - echo install process started
-      - npm install
+      - echo ${CODEBUILD_BUILD_ID}
+      - echo ${AWS_DEFAULT_REGION}
+      - echo ${AWS_REGION}
+      - echo ${CODEBUILD_BATCH_BUILD_IDENTIFIER}
+      - echo ${CODEBUILD_BUILD_ARN}
+      - echo ${CODEBUILD_BUILD_ID}
+      - echo ${CODEBUILD_BUILD_IMAGE}
+      - echo ${CODEBUILD_BUILD_NUMBER}
+      - echo ${CODEBUILD_KMS_KEY_ID}
+      - echo ${CODEBUILD_LOG_PATH}
+      - echo ${CODEBUILD_PUBLIC_BUILD_URL}
+      - echo ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+      - echo ${CODEBUILD_SOURCE_REPO_URL}
+      - echo ${CODEBUILD_SOURCE_VERSION}
+      - echo ${CODEBUILD_SRC_DIR}
+      - echo ${CODEBUILD_START_TIME}
+      - echo ${CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID}
+      - echo ${CODEBUILD_WEBHOOK_BASE_REF}
+      - echo ${CODEBUILD_WEBHOOK_EVENT}
+      - echo ${CODEBUILD_WEBHOOK_MERGE_COMMIT}
+      - echo ${CODEBUILD_WEBHOOK_PREV_COMMIT}
+      - echo ${CODEBUILD_WEBHOOK_HEAD_REF}
+      - echo ${CODEBUILD_WEBHOOK_TRIGGER}
+      - echo ${HOME}
+      # - echo ${DB_USER}
+      #- echo ${DB_PASS}
+      #- npm install
   build:
     commands:
       - echo build process started now
-      - npm run build  
-artifacts:
+ #     - {codepipeline.PipelineExecutionId}
+ #     - npm run build  
+#artifacts:
   # include all files required to run application
   # we include only the static build files
-  files:
-    - '**/*'
-  base-directory: 'build'
+  #files:
+  #  - '**/*'
+  #base-directory: 'build'
