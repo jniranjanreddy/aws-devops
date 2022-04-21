@@ -19,7 +19,7 @@ phases:
 	  - free -m
       - echo "Checking out to Branach"
       - ls -ltr
-      - git checkout SMART_178
+      - git checkout feature-branch001
       - GIT_BRANCH=`echo ${BRANCH} | tr '[:upper:]' '[:lower:]'`
       - echo Executing Docker Build `date`
       - IMAGE_ID="${ENVIRONMENT}"-"${CODEBUILD_BUILD_NUMBER}"
@@ -29,7 +29,7 @@ phases:
       - docker tag ${IMAGE_ID}:latest ${myID}.dkr.ecr.us-west-2.amazonaws.com/${DOCKER_REG}:${IMAGE_ID}
       - docker push ${myID}.dkr.ecr.us-west-2.amazonaws.com/${DOCKER_REG}:${IMAGE_ID}
       - sed -i -e "s/IMAGEIDPLACEHOLDER/${IMAGE_ID}/g" Task-definition-dev.json
-      - aws ecs register-task-definition --cli-input-json file://task-definition.json
+      - aws ecs register-task-definition --cli-input-json Task-definition-dev.json
       - aws ecs update-service --cluster ${CLUSTER_NAME} --service niru-dev-service --task-definition smartapp-dev
   post_build:
     commands:
